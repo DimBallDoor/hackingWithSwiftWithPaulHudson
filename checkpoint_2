@@ -1,5 +1,13 @@
-let someArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-print("Элементов в массиве: \(someArray.count)")
+var arr = [Int]()
+func createArray() -> [Int] {
+    let n = Int.random(in: 1...100)
+    for _ in 1...n {
+        let m = Int.random(in: 1...100)
+        arr.append(m)
+    }
+    return arr
+}
 
-let someSet = Set(someArray)
-print("Из них \(someSet.count) уникальных")
+createArray()
+print("Элементов в массиве: \(arr.count)")
+print("Из них \(Set(arr).count) уникальных")
